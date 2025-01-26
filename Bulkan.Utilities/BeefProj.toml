@@ -1,5 +1,5 @@
 FileVersion = 1
-Dependencies = {corlib = "*", Bulkan = "*"}
+Dependencies = {corlib = "*", Bulkan = "*", corlib = "*"}
 
 [Project]
 Name = "Bulkan.Utilities"
@@ -7,13 +7,26 @@ TargetType = "BeefLib"
 StartupObject = "Bulkan.Utilities.Program"
 
 [Configs.Debug.Win64]
-LibPaths = ["$(ProjectDir)/dist/VulkanMemoryAllocatorrd.lib"]
+OtherLinkFlags = "$(LinkFlags) libucrtd.lib"
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/VulkanMemoryAllocatord.lib"]
+
+[Configs.Debug.Linux64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/todo.a"]
 
 [Configs.Release.Win64]
-LibPaths = ["$(ProjectDir)/dist/VulkanMemoryAllocator.lib"]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/VulkanMemoryAllocator.lib"]
+
+[Configs.Release.Linux64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/todo.a"]
 
 [Configs.Paranoid.Win64]
-LibPaths = ["$(ProjectDir)/dist/VulkanMemoryAllocator.lib"]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/VulkanMemoryAllocator.lib"]
+
+[Configs.Paranoid.Linux64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/todo.a"]
 
 [Configs.Test.Win64]
-LibPaths = ["$(ProjectDir)/dist/VulkanMemoryAllocator.lib"]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/VulkanMemoryAllocator.lib"]
+
+[Configs.Test.Linux64]
+LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/todo.a"]
