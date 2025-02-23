@@ -17,6 +17,9 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(VulkanMemoryAllocator)
 
+set_option(VMA_DYNAMIC_VULKAN_FUNCTIONS ON)
+set_option(VMA_STATIC_VULKAN_FUNCTIONS OFF)
+
 add_custom_target(copy_libs ALL
     COMMENT "Copying library files"
 )

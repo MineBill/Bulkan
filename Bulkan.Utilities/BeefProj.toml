@@ -7,7 +7,6 @@ TargetType = "BeefLib"
 StartupObject = "Bulkan.Utilities.Program"
 
 [Configs.Debug.Win64]
-OtherLinkFlags = "$(LinkFlags) libucrtd.lib"
 LibPaths = ["$(ProjectDir)/dist/$(Configuration)-$(Platform)/VulkanMemoryAllocatord.lib"]
 
 [Configs.Debug.Linux64]
